@@ -20,7 +20,7 @@ console.log('Tods count: ',count);
     console.log('Unable to fetch todos',err);
 });
 
-db.collection('Users').find({name:'Harpreet Saini'}).toArray().then((docs)=>{
+db.collection('Users').find().toArray().then((docs)=>{
 console.log(JSON.stringify(docs,undefined,2));
 });
 });
