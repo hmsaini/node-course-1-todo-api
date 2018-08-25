@@ -26,3 +26,5 @@ todo.save().then((doc)=>{
 app.listen(3000,()=>{
     console.log('Starting on port 3000');
 });
+
+module.exports={app};
