@@ -20,6 +20,7 @@ beforeEach((done)=>{
     }).then(()=>done());
 });
 
+//------------- describe post-----------
 describe('POST /todos',()=>{
 it('should create a new todo',(done)=>{
 var text='Test todo text';
@@ -60,10 +61,10 @@ request(app)
 });
 });
 });
+// ----------end of describe post---------------
 
 
-
-
+//----------- describe get-------------------
 describe('GET /todos',()=>{
 it('should get all todos',(done)=>{
     request(app)
@@ -75,7 +76,10 @@ it('should get all todos',(done)=>{
     .end(done);
 });
 });
+//-----------end of describe get---------------
 
+
+//------------describe get-----------------
 describe('GET /todos/:id',()=>{
 it('should return todo doc',(done)=>{
 request(app)
@@ -102,9 +106,11 @@ it('should return 404 for non-object ids',(done)=>{
     .expect(404)
     .end(done);
 });
-
 });
+//--------------end of describe get --------------
 
+
+//---------------describe delete-------------------
 describe('DELETE /todos/:id',()=>{
 it('should remove a todo',(done)=>{
 var hexId=todos[1]._id.toHexString();
@@ -142,7 +148,7 @@ it('should return 404 if object id is invalid',(done)=>{
     .expect(404)
     .end(done);
 });
-
 });
+//-------------end of decribe delete------------------
 
 
